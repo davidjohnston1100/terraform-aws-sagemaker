@@ -1,19 +1,19 @@
 resource "aws_sagemaker_domain" "this" {
-  domain_name = var.sagemaker_domain_name 
-  auth_mode   = var.sagemaker_auth_mode 
-  vpc_id      = var.sagemaker_vpc_id 
+  domain_name = var.sagemaker_domain_name
+  auth_mode   = var.sagemaker_auth_mode
+  vpc_id      = var.sagemaker_vpc_id
   subnet_ids  = var.sagemaker_subnet_ids
 
   default_user_settings {
-    execution_role = "arn:aws:iam::796772895841:role/service-role/AmazonSageMaker-ExecutionRole-20230829T002628"
+    execution_role = ""
   }
 }
 
 resource "aws_sagemaker_app" "this" {
   domain_id         = aws_sagemaker_domain.this.id
-  user_profile_name = aws_sagemaker_user_profile.this.user_profile_name 
-  app_name          = var.sagemaker_app_name  
-  app_type          = var.sagemker_app_type 
+  user_profile_name = aws_sagemaker_user_profile.this.user_profile_name
+  app_name          = var.sagemaker_app_name
+  app_type          = var.sagemker_app_type
 }
 
 resource "aws_sagemaker_user_profile" "this" {

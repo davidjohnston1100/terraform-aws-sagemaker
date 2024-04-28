@@ -3,15 +3,15 @@
 ################################################################################
 
 variable "sagemaker_domain_name" {
-  description = "."
+  description = "Sagemaker domain name."
   type        = string
-  default     = ""
+  default     = "test-domain"
 }
 
 variable "sagemaker_auth_mode" {
   description = "."
   type        = string
-  default     = ""
+  default     = "IAM"
 }
 
 variable "sagemaker_vpc_id" {
@@ -45,13 +45,13 @@ variable "sagemaker_domain_id" {
 variable "sagemaker_app_name" {
   description = "."
   type        = string
-  default     = ""
+  default     = "test-app"
 }
 
 variable "sagemker_app_type" {
   description = "."
   type        = string
-  default     = ""
+  default     = "JupyterServer"
 }
 
 ################################################################################
@@ -61,7 +61,7 @@ variable "sagemker_app_type" {
 variable "sagemaker_user_profile_name" {
   description = "."
   type        = string
-  default     = ""
+  default     = "test-user-profile"
 }
 
 ################################################################################

@@ -71,13 +71,25 @@ variable "sagemaker_user_profile_name" {
 variable "sagemaker_notebook_instance_name" {
   description = "."
   type        = string
-  default     = ""
+  default     = "test-notebook-instance"
 }
 
 variable "sagemaker_notebook_instance_type" {
   description = "."
   type        = string
-  default     = ""
+  default     = "ml.t2.medium"
+}
+
+variable "sagemaker_platform_identifier" {
+  description = "."
+  type        = string
+  default     = "notebook-al2-v2"
+}
+
+variable "sagemaker_notebook_instance_value_size" {
+  description = "."
+  type        = number
+  default     = 5
 }
 
 variable "sagemaker_default_code_repository" {
@@ -86,10 +98,22 @@ variable "sagemaker_default_code_repository" {
   default     = ""
 }
 
+variable "sagemaker_notebook_instance_root_access" {
+  description = "."
+  type        = string
+  default     = "Enabled"
+}
+
 variable "sagemaker_notebook_instance_count" {
   description = "."
   type        = number
   default     = 0
+}
+
+variable "sagemaker_notebook_instance_direct_internet_access" {
+  description = "."
+  type        = string
+  default     = "Enabled"
 }
 
 ################################################################################
@@ -99,13 +123,13 @@ variable "sagemaker_notebook_instance_count" {
 variable "sagemaker_code_repository_name" {
   description = "."
   type        = string
-  default     = ""
+  default     = "test-code-repo"
 }
 
 variable "sagemaker_code_repository_url" {
   description = "."
   type        = string
-  default     = ""
+  default     = "https://github.com/hashicorp/terraform-provider-aws.git"
 }
 
 variable "sagemaker_code_repository_count" {

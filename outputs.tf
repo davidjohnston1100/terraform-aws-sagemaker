@@ -17,11 +17,17 @@ output "sagemaker_domain_url" {
   value       = aws_sagemaker_domain.this.url
 }
 
+// notebook efs file system id
+output "sagemaker_domain_home_efs_file_system_id" {
+  description = "."
+  value       = aws_sagemaker_domain.this.home_efs_file_system_id
+}
+
 #---------------------------------------------------
 # AWS Sagemaker app
 #---------------------------------------------------
 
-/*output "sagemaker_app_id" {
+output "sagemaker_app_id" {
   description = "."
   value       = aws_sagemaker_app.this.id
 }
@@ -29,7 +35,7 @@ output "sagemaker_domain_url" {
 output "sagemaker_app_arn" {
   description = "."
   value       = aws_sagemaker_app.this.arn
-}*/
+}
 
 #---------------------------------------------------
 # AWS Sagemaker user profile
@@ -49,7 +55,7 @@ output "sagemaker_user_profile_arn" {
 # AWS Sagemaker notebook instance
 #---------------------------------------------------
 
-/*output "sagemaker_notebook_instance_id" {
+output "sagemaker_notebook_instance_id" {
   description = "."
   value       = aws_sagemaker_notebook_instance.this.id
 }
@@ -64,19 +70,33 @@ output "sagemaker_notebook_instance_url" {
   value       = aws_sagemaker_notebook_instance.this.url
 }
 
+output "sagemaker_notebook_instance_network_interface_id" {
+  description = "."
+  value       = aws_sagemaker_notebook_instance.this.network_interface_id
+}
+
+#---------------------------------------------------
+# AWS Sagemaker notebook instance lifecycle configuration
+#---------------------------------------------------
+
+/*output "sagemaker_notebook_instance_lifecycle_configuration_arn" {
+  description = "."
+  value       = aws_sagemaker_notebook_instance_lifecycle_configuration.this.arn
+}*/
+
 #---------------------------------------------------
 # AWS Sagemaker code repository
 #---------------------------------------------------
 
 output "sagemaker_code_repository_id" {
   description = "."
-  value       = aws_sagemaker_code_repository.this.id
+  value       = aws_sagemaker_code_repository.example.id
 }
 
 output "sagemaker_code_repository_arn" {
   description = "."
-  value       = aws_sagemaker_code_repository.this.arn
-}*/
+  value       = aws_sagemaker_code_repository.example.arn
+}
 
 #---------------------------------------------------
 # Sagemaker VPC Outputs
